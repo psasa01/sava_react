@@ -82,9 +82,9 @@ body {
   z-index: 999;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1440px) {
   .h5 {
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
 }
 
@@ -107,4 +107,27 @@ body {
   position: absolute;
   top: .2em;
   left: .4em
+}
+
+.fade-enter {
+  opacity: 0;
+  animation-delay: 2s;
+  z-index: 1;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  animation-delay: 2s;
+  transition: opacity 600ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+  
+  animation-delay: 2s;
+}
+
+.fade-exit.fade-exit-active {
+  opacity: 0;
+  transition: opacity 600ms ease-out;
 }

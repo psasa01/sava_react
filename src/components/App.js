@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 import Header from './Header';
 import Footer from './Footer';
@@ -12,21 +13,34 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Header />
-
+        <Route render={({ location }) => (
 
           <div>
-            <Route exact path='/' component={Index} />
-            <Route path='/aktuelnosti' component={Aktuelnosti} />
-            <Route path='/cjenovnici' component={Cjenovnici} />
+            <Header />
 
 
+          
+              <TransitionGroup>
+                <CSSTransition
+                  timeout={300}
+                  classNames="fade"
+                  key={location.key}
+                >
+                  <Switch location={location}>
+                    <Route exact path='/' component={Index} />
+                    <Route path='/aktuelnosti' component={Aktuelnosti} />
+                    <Route path='/cjenovnici' component={Cjenovnici} />
+                    <Route render={() => <div style={{ position: 'absolute', top: '3em' }}>Not Found</div>} />
+                  </Switch>
+                </CSSTransition>
+              </TransitionGroup>
+
+            <Footer />
 
           </div>
-          <Footer />
 
-        </div>
+        )} />
+
       </BrowserRouter>
 
     )

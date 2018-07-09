@@ -72,7 +72,7 @@ export default class Index extends Component {
             return (
 
 
-                <div>
+                <div >
                     <Link to={'/' + data.data}>
                         <div className="col l6" style={{ marginTop: '1.5em' }}>
                             <style>{css}</style>
@@ -104,7 +104,7 @@ export default class Index extends Component {
         })
 
         return (
-            <div className="row" style={{ width: '90%' }}>
+            <div className="row" style={{ width: '90%', position: 'relative' }}>
                 <br />
                 <br />
                 {renderCard}
