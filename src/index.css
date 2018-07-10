@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background-color: #e9e9ff;
 }
 
 .footer {
@@ -29,6 +30,19 @@ body {
   transition: ease-out .2s;
   z-index: 998;
   opacity: .8;
+}
+
+.skewed-down {
+  position: absolute;
+  bottom: -33%;
+  width: 100%;
+  height: 60%;
+  overflow: hidden;
+  z-index: 998;
+  opacity: .8;
+  transform: skewY(-5deg);
+  transition: ease-out .2s;
+
 }
 
 /* #img-cjenovnici {
@@ -82,6 +96,17 @@ body {
   z-index: 999;
 }
 
+.h5-cjen {
+  position: absolute;
+  /* transform: rotate(-90deg);
+  transform-origin: left top 0; */
+  left: .5em;
+  bottom: -.2em;
+  color: white;
+  font-size: 2rem;
+  z-index: 999;
+}
+
 @media (max-width: 1440px) {
   .h5 {
     font-size: 1.5em;
@@ -98,7 +123,7 @@ body {
   position: fixed;
   height: 3em;
   width: 100%;
-  box-shadow: 0px 1px 5px grey;
+  box-shadow: 0px 1px 8px #aaa;
   z-index: 9999;
   background-color: white;
 }
@@ -111,23 +136,19 @@ body {
 
 .fade-enter {
   opacity: 0;
-  animation-delay: 2s;
   z-index: 1;
 }
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  animation-delay: 2s;
-  transition: opacity 600ms ease-in;
+  transition: opacity 350ms ease-in;
 }
 
 .fade-exit {
   opacity: 1;
-  
-  animation-delay: 2s;
 }
 
 .fade-exit.fade-exit-active {
   opacity: 0;
-  transition: opacity 600ms ease-out;
+  transition: opacity 350ms ease-out;
 }

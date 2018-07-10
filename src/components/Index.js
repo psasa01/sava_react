@@ -72,7 +72,7 @@ export default class Index extends Component {
             return (
 
 
-                <div >
+                <div style={{ marginTop: '-1.5em' }}>
                     <Link to={'/' + data.data}>
                         <div className="col l6" style={{ marginTop: '1.5em' }}>
                             <style>{css}</style>
@@ -107,6 +107,7 @@ export default class Index extends Component {
             <div className="row" style={{ width: '90%', position: 'relative' }}>
                 <br />
                 <br />
+                <h3 className="center indigo-text text-lighten-1">DOBRODOŠLI</h3>
                 {renderCard}
             </div >
         )
